@@ -68,7 +68,6 @@ export default class List extends Component{
 	 
 	 componentDidMount(){
 	 	axios.get('/api/list.json').then(this.handleGetListDataSucc);
-	 	
 	 	this.ctx = this.columnar.getContext('2d');
         this.drawClock();
         this.init();

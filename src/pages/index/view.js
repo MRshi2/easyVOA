@@ -99,17 +99,27 @@ class Index extends Component{
 	 	</div>
 	 	)
 	 }
-	 
-	 componentDidMount(){
+	 componentDidUpdate(){
 	 	this.myScroll = new IScroll('#scrolled', { mouseWheel: true });
 	 	this.myScroll.on("scroll", ()=>{
-	 		if(this.myScroll.y>=60){
-	 			console.log(123);
+	 		if(this.myScroll.y>=10){
+	 			
 	 		}
+	 		
 	 	});
-	 	
+	 }
+	 componentDidMount(){
 	 	var myChart = echarts.init(document.getElementById('main'));
-
+	 	this.myScroll = new IScroll('#scrolled', { mouseWheel: true });
+	 	console.log(1);
+	 	this.myScroll.on("scroll", ()=>{
+	 			console.log(2);
+	 		if(this.myScroll.y>=10){
+	 			console.log(3);
+	 		}
+	 			console.log(4);
+	 	});
+	 			console.log(5);
 		myChart.setOption({
 		    color: ['#3398DB'],
 		    tooltip : {

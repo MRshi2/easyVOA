@@ -91,6 +91,7 @@
 #scrolled{
 	height: 985px;
 	overflow: hidden;
+	z-index: 10;
 }
 .index-content-right{
 	margin-top: 80px;
