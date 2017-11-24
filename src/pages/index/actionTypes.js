@@ -1,1 +1,0 @@
-export const CHANGE_INDEX_INDEX = "index/CHANGE_INDEX_INDEX";
