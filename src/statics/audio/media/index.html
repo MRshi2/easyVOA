@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<video id="video" controls width="800">
+		<source src="4.ogg" type='video/ogg'>
+		<source src="4.mp4" type='video/mp4'>
+		<source src="4.webm"  type='video/webm'>
+		您的浏览器暂不支持video标签。播放视频
+	</video >
+	<button id="btn">暂停</button>
+	<p id="playTime"></p>
+	<input type="range" step=.1 max=1 min=0 id="playRange"/>
+</body>
+<script>
+	var video = document.getElementById("video"),
+		button = document.querySelector("#btn"),
+		playTime = document.querySelector("#playTime"),
+		playRange = document.querySelector("#playRange");
+	
+	video.addEventListener("canplay", function() {
+		playTime.innerHTML = video.currentTime + ' / ' + video.duration
+	})
+
+	video.addEventListener("timeupdate", function(){
+		playTime.innerHTML = video.currentTime + ' / ' + video.duration;
+		var ratio = video.currentTime / video.duration;
+		playRange.value = ratio;
+	})
+
+	playRange.addEventListener("change", function(e) {
+		video.currentTime = video.duration * e.target.value;
+	})
+</script>
+</html>
